@@ -363,8 +363,7 @@ class Bootstrap
         $processor = new Processor();
 
         $config = $processor->processConfiguration($configuration, $configs);
-        $config = DbToolsConfiguration::appendPostConfig($config);
-        $config = DbToolsConfiguration::fixLegacyOptions($config);
+        $config = DbToolsConfiguration::finalizeConfiguration($config);
 
         return $config;
     }
