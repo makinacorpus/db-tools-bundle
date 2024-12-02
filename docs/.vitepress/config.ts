@@ -87,6 +87,8 @@ export default defineConfig({
           { text: 'Statistics', link: '/stats' },
           { text: 'Configuration basics', link: '/configuration/basics' },
           { text: 'Configuration reference', link: '/configuration/reference' },
+          { text: 'Changelog', link: '/changelog'},
+          { text: 'Upgrade guide', link: '/upgrade'},
         ]
       },
       {
@@ -96,6 +98,7 @@ export default defineConfig({
           { text: 'How to help ?', link: '/contribute/contribute' },
           { text: 'Development guide', link: '/contribute/guide' },
           { text: 'Creating a pack of anonymizers', link: '/contribute/pack' },
+          { text: 'Code of conduct', link: '/contribute/code-of-conduct' },
         ]
       },
     ]

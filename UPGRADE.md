@@ -2,7 +2,7 @@
 
 ## Next
 
-### Configuration file structure change
+### Configuration file structure changes
 
 The 2.0 version introduces many configuration changes. Most of them will
 gracefuly fallback to older version until 3.0, but some have been removed
