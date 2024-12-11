@@ -22,9 +22,7 @@ final class DbToolsExtension extends Extension
     {
         $configuration = $this->getConfiguration($configs, $container);
         $config = $this->processConfiguration($configuration, $configs);
-
-        $config = DbToolsConfiguration::fixLegacyOptions($config);
-        $config = DbToolsConfiguration::appendPostConfig($config);
+        $config = DbToolsConfiguration::finalizeConfiguration($config);
 
         $loader = new YamlFileLoader($container, new FileLocator(\dirname(__DIR__).'/Resources/config'));
         $loader->load('services.yaml');

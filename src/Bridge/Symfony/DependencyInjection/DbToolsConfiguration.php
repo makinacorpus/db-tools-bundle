@@ -16,14 +16,18 @@ class DbToolsConfiguration implements ConfigurationInterface
     ) {}
 
     /**
-     * Append values in configuration we cannot set a default.
+     * Apply some final modifications to the configuration after it has been
+     * processed, such as append values we cannot set as default values, or
+     * fix legacy option names for backwards compatibility.
      *
-     * So we act after configuration has been processed and restore missing
-     * values from here. This also allows the standalone configuration doing
-     * it outside the Symfony extension context.
+     * Callable outside the Symfony extension context to apply the same
+     * modifications to configurations from other contexts (standalone,
+     * Laravel, etc.).
      */
-    public static function appendPostConfig(array $config): array
+    public static function finalizeConfiguration(array $config): array
     {
+        $config = self::fixLegacyOptions($config);
+
         return $config;
     }
 
@@ -34,7 +38,7 @@ class DbToolsConfiguration implements ConfigurationInterface
      * @internal
      * @todo Alter in 3.x accordingly to option removal.
      */
-    public static function fixLegacyOptions(array $config): array
+    private static function fixLegacyOptions(array $config): array
     {
         if (isset($config['storage']['root_dir'])) {
             \trigger_deprecation('makinacorpus/db-tools-bundle', '2.0.0', '"db_tools.storage.root_dir" configuration option is deprecated and renamed "db_tools.storage_directory"');

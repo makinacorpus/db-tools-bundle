@@ -21,7 +21,7 @@ class DbToolsConfigurationTest extends TestCase
             \is_string($dataOrFilename) ? Yaml::parseFile($dataOrFilename) : ['db_tools' => $dataOrFilename],
         );
 
-        return DbToolsConfiguration::fixLegacyOptions($config);
+        return DbToolsConfiguration::finalizeConfiguration($config);
     }
 
     public function testConfigurationEmpty(): array
