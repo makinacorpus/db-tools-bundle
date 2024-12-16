@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   lang: 'en',
   title: 'DbToolsBundle',
-  description: 'A Symfony bundle to backup, restore and anonymize your data',
+  description: 'A PHP library to backup, restore and anonymize databases',
   srcDir: "content",
   base: "/",
   metaChunk: false,
@@ -87,6 +87,8 @@ export default defineConfig({
           { text: 'Statistics', link: '/stats' },
           { text: 'Configuration basics', link: '/configuration/basics' },
           { text: 'Configuration reference', link: '/configuration/reference' },
+          { text: 'Changelog', link: '/changelog'},
+          { text: 'Upgrade guide', link: '/upgrade'},
         ]
       },
       {
@@ -96,6 +98,7 @@ export default defineConfig({
           { text: 'How to help ?', link: '/contribute/contribute' },
           { text: 'Development guide', link: '/contribute/guide' },
           { text: 'Creating a pack of anonymizers', link: '/contribute/pack' },
+          { text: 'Code of conduct', link: '/contribute/code-of-conduct' },
         ]
       },
     ]

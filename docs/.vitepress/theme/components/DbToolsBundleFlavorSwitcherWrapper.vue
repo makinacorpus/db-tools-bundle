@@ -21,7 +21,7 @@ details {
   border-bottom: 1px solid var(--vt-c-divider-light);
   transition: border-color .5s,background-color .5s ease;
   position: sticky;
-  top: -.5px;
+  top: -33px;
   background-color: var(--vp-c-bg-alt);
   padding-top: 10px;
   padding-bottom: 1px;
@@ -47,5 +47,11 @@ a.info {
   border: solid 1px var(--vp-c-brand);
   border-radius: 100%;
   line-height: 14px;
+}
+
+@media (min-width: 960px) {
+  details {
+    top: -.5px;
+  }
 }
 </style>
